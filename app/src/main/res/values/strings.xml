@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">密码随机生成与存储</string>
+
+    <string name="pwd_generation_title">密码随机生成</string>
+    <string name="pwd_repository_title">密码仓库</string>
+    <string name="pwd_length_title">密码长度(4–32)</string>
+
+    <string name="hint_remark">请输入备注，选填（最大长度100）。\n例如：https:xxx.com</string>
+    <string name="hint_password">密码...</string>
+
+    <string name="hint_password2">密码</string>
+    <string name="hint_remark2">备注</string>
+
+    <string name="str_digit">数字</string>
+    <string name="str_lowercase">小写字母</string>
+    <string name="str_uppercase">大写字母</string>
+    <string name="str_special_chars">特殊字符</string>
+
+    <string name="str_generation_pwd">生成密码</string>
+    <string name="str_save_pwd">保存密码</string>
+    <string name="str_copy">复制</string>
+    <string name="str_cancel">取消</string>
+    <string name="str_confirm">确认</string>
+    <string name="str_sure_delete">您确定要删除此密码么？</string>
+    <string name="str_empty_data">啊哦~暂时没有数据哦~</string>
+
+
+
+    <string name="temporary_title">Title Title Title Title Title Title</string>
+    <string name="temporary_content">Content Content Content Content Content Content Content</string>
+    <string name="temporary_datetime">2022–10-12 20:04</string>
+    <string name="img_description">null</string>
+</resources>
