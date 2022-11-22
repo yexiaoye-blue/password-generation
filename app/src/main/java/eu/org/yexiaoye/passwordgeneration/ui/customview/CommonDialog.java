@@ -70,39 +70,43 @@ public class CommonDialog extends Dialog {
             mDialogClickListener.onConfirmClick(this);
         });
 
-        mFirstEditText.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+        if (mFirstEditText != null && mSecondEditText != null) {
+            mFirstEditText.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-            }
+                }
 
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-            }
+                }
 
-            @Override
-            public void afterTextChanged(Editable s) {
-                mDialogTextChangeListener.onFirstContentChange(getThis());
-            }
-        });
+                @Override
+                public void afterTextChanged(Editable s) {
+                    mDialogTextChangeListener.onFirstContentChange(getThis());
+                }
+            });
 
-        mSecondEditText.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            mSecondEditText.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-            }
+                }
 
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-            }
+                }
 
-            @Override
-            public void afterTextChanged(Editable s) {
-                mDialogTextChangeListener.onSecondContentChange(getThis());
-            }
-        });
+                @Override
+                public void afterTextChanged(Editable s) {
+                    mDialogTextChangeListener.onSecondContentChange(getThis());
+                }
+            });
+        }
+
+
 
         /*mEtFirstContent.addTextChangedListener(new TextWatcher() {
             @Override
