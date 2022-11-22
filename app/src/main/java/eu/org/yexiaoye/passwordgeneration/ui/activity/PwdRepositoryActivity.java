@@ -88,20 +88,24 @@ public class PwdRepositoryActivity extends BaseActivity<ActivityPwdRepositoryBin
             mCurrentDataSize = mPasswordInfoList.size();
 
             mPasswordListAdapter.setOnItemLongClickListener(((view, position) -> {
+
                 CommonDialog dialog = new CommonDialog.Builder(this)
                         .setLayoutResID(R.layout.dialog_asking_delete)
                         .setOnClickListener(new CommonDialog.CommonDialogClickListener() {
                             @Override
                             public void onConfirmClick(Dialog dialog) {
                                 PasswordInfo passwordInfo = mPasswordInfoList.get(position);
-                                int i = mDao.deleteByPassword(passwordInfo.getPwdContent());
+
                                 dialog.dismiss();
 
-                                if (i == 1) {
-                                    LogUtil.d(TAG,"删除成功！");
+                                // 删除数据库中的数据
+                                if (1 == mDao.deleteByPassword(passwordInfo.getPwdContent())) {
+                                    //  移除当前列表中的数据
+                                    mPasswordInfoList.remove(position);
                                     // 通知页面更新
                                     mPasswordListAdapter.onItemRemove(position);
                                     mCurrentDataSize -= 1;
+                                    LogUtil.d(TAG,"删除成功！");
                                 }else {
                                     Toast.makeText(PwdRepositoryActivity.this,"删除失败！，未知错误！",Toast.LENGTH_SHORT).show();
                                 }

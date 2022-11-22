@@ -77,12 +77,12 @@ public class PasswordDaoImpl implements PasswordDao {
             if (passwordInfo.getRemark() != null) {
                 values.put("_remark",passwordInfo.getRemark());
             }
+
             count = mWritableDB.update(Constants.TABLE_NAME, values, "_index=?", new String[]{String.valueOf(passwordInfo.getIndex())});
             mWritableDB.setTransactionSuccessful();
         } finally {
             mWritableDB.endTransaction();
         }
-
         return count;
     }
 
